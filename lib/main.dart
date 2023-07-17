@@ -1,40 +1,60 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:univastay/screens/welcome_screen.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-  // This widget is the root of your application.
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      // Application name
-      title: 'Flutter Hello World',
-      // Application theme data, you can set the colors for the application as
-      // you want
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      // A widget which will be started on application startup
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
+void main() {
+  runApp(UnivaStayApp());
 }
 
-class MyHomePage extends StatelessWidget {
-  final String title;
-  const MyHomePage({super.key, required this.title});  
+class UnivaStayApp extends StatefulWidget {
+  @override
+  _UnivaStayAppState createState() => _UnivaStayAppState();
+}
+
+class _UnivaStayAppState extends State<UnivaStayApp> {
+  @override
+  void initState() {
+    super.initState();
+    // Wait for 2 seconds and then navigate to WelcomeScreen
+    Timer(Duration(seconds: 2), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => WelcomeScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        // The title text which will be shown on the action bar
-        title: Text(title),
+    // Hide the debug banner
+    SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersive);
+    return MaterialApp(
+      title: 'UnivaStay',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.purple)
+            .copyWith(secondary: Colors.green),
       ),
-      body: Center(
-        child: Text(
-          'Hello, World!',
+      debugShowCheckedModeBanner: false, // Remove the debug banner
+      home: Scaffold(
+        // Add your splash screen widget here
+        body: Center(
+          child: Builder(
+            builder: (context) {
+              // Access the Navigator widget through the builder's context
+              // and navigate to WelcomeScreen after the delay
+              Future.delayed(Duration(seconds: 2), () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => WelcomeScreen()),
+                );
+              });
+              // Display your custom splash screen widget here
+              return FlutterLogo(
+                size: 100,
+              );
+            },
+          ),
         ),
       ),
     );
