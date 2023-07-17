@@ -1,5 +1,5 @@
 name: univastay
-description: A new Flutter project.
+description: Hostels Application that enables university students find accomodation near their hostels.
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,6 +19,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  file_picker: ^4.1.6
+  image_picker: ^0.8.4+4
+  cached_network_image: ^3.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,6 +33,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  cupertino_icons: ^1.0.3
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
