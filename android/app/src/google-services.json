@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "912415959430",
+    "project_id": "univastay-467bd",
+    "storage_bucket": "univastay-467bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:912415959430:android:8928738850b072b391a407",
+        "android_client_info": {
+          "package_name": "com.modi.univastay"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "912415959430-ebu29rg4int3qcfg5mqigug6k4isedra.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyChnkC9SvZZ0ShMtAon1BqXPmpvvT3oIP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "912415959430-ebu29rg4int3qcfg5mqigug6k4isedra.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
